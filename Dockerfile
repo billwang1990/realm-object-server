@@ -12,11 +12,9 @@ COPY configuration.yml /etc/realm/configuration.yml
 # Change default source to aliyun, fuck the WFG[::-1]!
 COPY sources.list /etc/apt/sources.list
 
-RUN echo "deb http://ppa.launchpad.net/fkrull/deadsnakes/ubuntu trusty main" > /etc/apt/sources.list.d/deadsnakes.list \
-    && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys DB82666C
-
-RUN echo "deb http://ppa.launchpad.net/nginx/stable/ubuntu lucid main" > /etc/apt/sources.list.d/nginx-stable-lucid.list \
-    && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C300EE8C
+RUN echo "deb http://ppa.launchpad.net/fkrull/deadsnakes/ubuntu xenial main" >> /etc/apt/sources.list && \
+    echo "deb-src http://ppa.launchpad.net/fkrull/deadsnakes/ubuntu xenial main" >> /etc/apt/sources.list && \
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FF3997E83CD969B409FB24BC5BB92C09DB82666C &&
 
 RUN apt-get update && \
 	apt-get -y install curl && \
