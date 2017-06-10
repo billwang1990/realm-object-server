@@ -12,7 +12,7 @@ RUN apt-get update && \
     systemctl enable realm-object-server &&\
     apt-get purge -y --auto-remove $buildDeps
 
-VOLUME /var/lib/realm/object-server
+VOLUME /var/lib/realm
 
 # Start the service
 CMD /usr/bin/realm-object-server -c /etc/realm/configuration.yml 
