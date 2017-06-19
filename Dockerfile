@@ -7,7 +7,7 @@ EXPOSE 9080
 EXPOSE 9443
 
 RUN apt-get update && \
-	apt-get -y install curl && \
+	apt-get -y install curl vim && \
 	# Setup Realm's PackageCloud repository
 	curl -s https://packagecloud.io/install/repositories/realm/realm/script.deb.sh | bash && \
     # Install the Realm Object Server
