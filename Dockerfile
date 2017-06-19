@@ -3,8 +3,6 @@ FROM ubuntu:16.04
 ENV REALM_ROOT_PATH=/var/lib/realm/object-server \
     REALM_LOG_PATH=/var/log/realm
 
-RUN mkdir /var/log/realm
-
 EXPOSE 9080 9443
 
 RUN apt-get update && \
