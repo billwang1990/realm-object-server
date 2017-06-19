@@ -1,13 +1,12 @@
 FROM ubuntu:16.04
 
 ENV REALM_ROOT_PATH=/var/lib/realm/object-server \
-    REALM_LOG_PATH=/var/lib/realm/log
+    REALM_LOG_PATH=/var/log/realm
 
-EXPOSE 9080
-EXPOSE 9443
+EXPOSE 9080 9443
 
 RUN apt-get update && \
-	apt-get -y install curl vim && \
+	apt-get -y install curl && \
 	# Setup Realm's PackageCloud repository
 	curl -s https://packagecloud.io/install/repositories/realm/realm/script.deb.sh | bash && \
     # Install the Realm Object Server
