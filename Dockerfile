@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 ENV REALM_ROOT_PATH=/var/lib/realm/object-server \
-    REALM_LOG_PATH=/var/log
+    REALM_LOG_PATH=/var/lib/realm/log
 
 EXPOSE 9080
 EXPOSE 9443
@@ -17,6 +17,8 @@ RUN apt-get update && \
     apt-get purge -y --auto-remove $buildDeps
 
 VOLUME ["${REALM_ROOT_PATH}", "${REALM_LOG_PATH}"]
+
+COPY configuration.yml /etc/realm/configuration.yml
 
 # Start the service
 CMD /usr/bin/realm-object-server -c /etc/realm/configuration.yml 
