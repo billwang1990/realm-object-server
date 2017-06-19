@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-ENV REALM_ROOT_PATH=/var/lib/realm-object-server \
+ENV REALM_ROOT_PATH=/var/lib/realm/object-server \
     REALM_LOG_PATH=/var/lib/realm/log
 
 EXPOSE 9080
