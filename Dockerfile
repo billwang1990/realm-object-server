@@ -17,7 +17,7 @@ RUN apt-get update && \
 
 VOLUME "${REALM_ROOT_PATH}"
 
-COPY configuration.yml /etc/realm/configuration.yml
+#COPY configuration.yml /etc/realm/configuration.yml
 
 # Start the service
 CMD /usr/bin/realm-object-server -c /etc/realm/configuration.yml 
