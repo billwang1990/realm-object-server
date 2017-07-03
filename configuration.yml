@@ -278,7 +278,7 @@ logging:
   ## The file to which the synchronisation server should log. This should
   ## be a writable path from the perspective of the user under which the
   ## server runs. If no path is specified, the server will log to stdout.
-  path: /var/log/realm-object-server.log
+  path: /var/log/realm/realm-object-server.log
 
 ## ----------------------------------------------------------------------------
 

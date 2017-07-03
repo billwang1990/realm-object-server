@@ -1,0 +1,8 @@
+ros:
+  image: realm-object-server
+  ports:
+    - "9443:9443"
+    - "8080:9080" 
+  volumes:
+    - ./realm-data:/var/lib/realm/object-server
+    - ./realm-log:/var/log/realm
