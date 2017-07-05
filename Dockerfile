@@ -1,8 +1,5 @@
 FROM ubuntu:16.04
 
-ENV REALM_ROOT_PATH=/var/lib/realm/object-server
-#    REALM_LOG_PATH=/var/log
-
 EXPOSE 9080 9443
 
 RUN apt-get update && \
@@ -14,8 +11,6 @@ RUN apt-get update && \
     # Enable the service
     systemctl enable realm-object-server &&\
     apt-get purge -y --auto-remove $buildDeps
-
-#VOLUME "${REALM_ROOT_PATH}"
 
 COPY configuration.yml /etc/realm/configuration.yml
 
