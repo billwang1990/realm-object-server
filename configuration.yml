@@ -174,12 +174,12 @@ proxy:
   http:
     ## Whether or not to enable the HTTP proxy module. It enables multiplexing requests
     ## by forwarding incoming requests on a single port to all services.
-    # enable: true
+    enable: false
 
     ## The address/interface on which the HTTP proxy module should listen. This defaults
     ## to 127.0.0.1. If you wish to listen on all available interfaces,
-    ## uncomment the following line.
-    listen_address: '::'
+    ## uncomment the following line. 
+    # listen_address: '::'
 
     ## The port that the HTTP proxy module should bind to.
     # listen_port: 9080
@@ -189,21 +189,21 @@ proxy:
     ## by forwarding incoming requests on a single port to all services.
     ## Note that even if it enabled, the HTTPS proxy will only start if supplied
     ## with a valid pair of certificates through certificate_path and private_key_path below.
-    # enable: false
+    enable: true
 
     ## The path to the certificate and private keys (in PEM format) that will be used
     ## to set up the HTTPS server accepting connections.
     ## These configuration options are MANDATORY to start the HTTPS proxy module.
-    # certificate_path: 'keys/https-proxy.crt'
-    # private_key_path: 'keys/https-proxy.key'
+    certificate_path: '/realm/keys/ros.crt'
+    private_key_path: '/realm/keys/ros.key'
 
     ## The address/interface on which the HTTPS proxy module should listen. This defaults
     ## to 127.0.0.1. If you wish to listen on all available interfaces,
     ## uncomment the following line.
-    # listen_address: '::'
+    listen_address: '::'
 
     ## The port that the HTTPS proxy module should bind to.
-    # listen_port: 9443
+    listen_port: 9443
 
 ## ----------------------------------------------------------------------------
 

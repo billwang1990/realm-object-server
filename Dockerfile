@@ -13,6 +13,7 @@ RUN apt-get update && \
     apt-get purge -y --auto-remove $buildDeps
 
 COPY configuration.yml /etc/realm/configuration.yml
-
-# Start the service
-CMD /usr/bin/realm-object-server -c /etc/realm/configuration.yml 
+COPY entrypoint.sh /etc/realm/entrypoint.sh
+COPY keys/ros.crt /realm/keys/ros.crt
+COPY keys/ros.key /realm/keys/ros.key
+ENTRYPOINT ["/etc/realm/entrypoint.sh"]
